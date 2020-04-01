@@ -8,16 +8,18 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm run client --prefix client",
-    "dev": "concurrently \npm run server\" \npm run client\"" 
+    "dev": "concurrently \npm run server\" \npm run client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "concurrently": "^5.1.0",
     "config": "^3.3.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.7"
   }
 }
