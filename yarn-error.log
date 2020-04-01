@@ -1,0 +1,60 @@
+Arguments: 
+  /Users/darryl/.nvm/versions/node/v12.16.1/bin/node /usr/local/Cellar/yarn/1.22.0/libexec/bin/yarn.js add react-redux redux-thunk redux-logger redux-persist axios redux momentclassnames react-router-dom
+
+PATH: 
+  /Users/darryl/.nvm/versions/node/v12.16.1/bin:/usr/local/opt/postgresql@12/bin:/Users/darryl/.rvm/gems/ruby-2.6.3/bin:/Users/darryl/.rvm/gems/ruby-2.6.3@global/bin:/Users/darryl/.rvm/rubies/ruby-2.6.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/darryl/.nvm/versions/node/v12.16.1/bin:/usr/local/opt/postgresql@12/bin:/Users/darryl/.rvm/gems/ruby-2.6.3/bin:/Users/darryl/.rvm/gems/ruby-2.6.3@global/bin:/Users/darryl/.rvm/rubies/ruby-2.6.3/bin:/Users/darryl/.rvm/bin:/Users/darryl/.rvm/bin
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  12.16.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/momentclassnames: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:66975:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:140727:22)
+      at Request.emit (events.js:311:20)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:141699:10)
+      at Request.emit (events.js:311:20)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.0/libexec/lib/cli.js:141621:12)
+      at Object.onceWrapper (events.js:417:28)
+      at IncomingMessage.emit (events.js:323:22)
+      at endReadableNT (_stream_readable.js:1204:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "mern-redux",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server",
+      "server": "nodemon server",
+      "client": "npm run client --prefix client",
+      "dev": "concurrently \npm run server\" \npm run client\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "bcrypt": "^4.0.1",
+      "concurrently": "^5.1.0",
+      "config": "^3.3.1",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "express-validator": "^6.4.0",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^5.9.7"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
