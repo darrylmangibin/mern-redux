@@ -2,13 +2,13 @@ import React from "react";
 
 import Layout from "../components/layout/Layout";
 import { Navigation } from "../components/layout/";
-import RegisterFields from '../components/register/RegisterFields';
+import RegisterFieldsContainer from "../components/containers/RegisterFieldsContainer";
 
 const Register = () => {
 	return (
 		<Layout>
 			<Navigation />
-			<RegisterFields />
+			<RegisterFieldsContainer />
 		</Layout>
 	);
 };

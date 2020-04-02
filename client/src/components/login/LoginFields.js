@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { store } from "../../redux/store";
+import { CLEAR_ERRORS } from "../../redux/types";
 
 import { Input, Button } from "../common";
-import { Spinner } from '../layout'
+import { Spinner } from "../layout";
 class LoginFields extends Component {
 	state = {
 		email: "",
@@ -9,17 +11,18 @@ class LoginFields extends Component {
 	};
 
 	componentDidUpdate(prevProps) {
-		if(prevProps.authenticated !== this.props.authenticated && this.props.authenticated) {
-			console.log("REDIRECT")
-			this.props.history.push("/")
+		if (
+			prevProps.authenticated !== this.props.authenticated &&
+			this.props.authenticated
+		) {
+			console.log("REDIRECT");
+			this.props.history.push("/");
 		}
 	}
 
-	// componentDidMount() {
-	// 	if(this.props.authenticated) {
-	// 		this.props.history.push("/")
-	// 	}
-	// }
+	componentDidMount() {
+		store.dispatch({ type: CLEAR_ERRORS });
+	}
 
 	handleOnChange = e => {
 		const { name, value } = e.target;
@@ -34,7 +37,7 @@ class LoginFields extends Component {
 	render() {
 		const { email, password } = this.state;
 		const { errors, loading } = this.props;
-		if(loading) return <Spinner />
+		if (loading) return <Spinner />;
 		return (
 			<div className="container">
 				<h2 align="center" style={{ marginTop: 40 }}>
