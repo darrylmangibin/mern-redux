@@ -16,14 +16,14 @@ import "./App.css";
 const App = () => {
 	useEffect(() => {
 		store.dispatch(getAuthUser());
-		// eslint-disable-next-line
+		// eslint-disable-next-lines
 	}, []);
 	return (
 		<Router>
 			<Switch>
 				<PrivateRoute exact path="/" component={Home} />
 				<Route exact path="/edit/:id" component={Edit} />
-				<Route exact path="/create" component={Create} />
+				<PrivateRoute exact path="/create" component={Create} />
 				<Route exact path="/register" component={Register} />
 				<Route exact path="/login" component={Login} />
 				<Route path="/" component={PageNotFound} />

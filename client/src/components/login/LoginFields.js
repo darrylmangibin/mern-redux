@@ -15,7 +15,6 @@ class LoginFields extends Component {
 			prevProps.authenticated !== this.props.authenticated &&
 			this.props.authenticated
 		) {
-			console.log("REDIRECT");
 			this.props.history.push("/");
 		}
 	}

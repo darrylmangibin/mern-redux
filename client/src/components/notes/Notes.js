@@ -1,11 +1,11 @@
 import React from "react";
 
-import NotesList from "./NotesList";
+import NotesListContainer from "../containers/NotesListContainer";
 
 const Notes = () => {
 	return (
 		<div className="container">
-			<NotesList />
+			<NotesListContainer />
 		</div>
 	);
 };
