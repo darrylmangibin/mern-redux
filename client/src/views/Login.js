@@ -2,13 +2,13 @@ import React from "react";
 
 import Layout from "../components/layout/Layout";
 import { Navigation } from "../components/layout/";
-import LoginFields from '../components/login/LoginFields';
+import LoginFieldsContainer from '../components/containers/LoginFieldsContainer';
 
 const Create = () => {
 	return (
 		<Layout>
 			<Navigation />
-			<LoginFields />
+			<LoginFieldsContainer />
 		</Layout>
 	);
 };

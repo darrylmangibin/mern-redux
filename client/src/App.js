@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { store } from './redux/store';
+import { getAuthUser } from './redux/auth/authActions'
 
 import Home from "./views/Home";
 import Edit from "./views/Edit";
@@ -11,6 +13,10 @@ import PageNotFound from "./views/PageNotFound";
 import "./App.css";
 
 const App = () => {
+	useEffect(() => {
+		store.dispatch(getAuthUser())
+		// eslint-disable-next-line
+	}, [])
 	return (
 		<Router>
 			<Switch>

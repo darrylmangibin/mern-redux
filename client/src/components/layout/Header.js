@@ -2,6 +2,37 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const Header = props => {
+	console.log(props);
+
+	const AuthLinks = () => {
+		return (
+			<Fragment>
+				<Link to="/login">Login</Link>
+				<Link to="/register">Register</Link>
+			</Fragment>
+		);
+	};
+
+	const GuessLinks = () => {
+		return (
+			// eslint-dispable-next-line
+			<div onClick={() => props.logout()} style={{ cursor: "pointer" }}>
+				Logout
+			</div>
+		);
+	};
+
+	const renderLinks = () => {
+		const { loading, authenticated } = props;
+		if (loading && !authenticated) {
+			return null;
+		} else if (!loading && !authenticated) {
+			return <AuthLinks />;
+		} else if (!loading && authenticated) {
+			return <GuessLinks />;
+		}
+	};
+
 	return (
 		<header className="header" style={{ display: "flex" }}>
 			<div className="container">
@@ -17,10 +48,7 @@ const Header = props => {
 					padding: "0px 30px"
 				}}
 			>
-				<Fragment>
-				<Link to="/login">Login</Link>
-				<Link to="/register">Register</Link>
-			</Fragment>
+				{renderLinks()}
 			</div>
 		</header>
 	);
