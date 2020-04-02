@@ -57,7 +57,7 @@ export default (state = initialState, { type, payload }) => {
 				errors: {},
 				token: null,
 				user: null,
-				loading: true
+				loading: false
 			};
 		default:
 			return state;

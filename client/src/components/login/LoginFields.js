@@ -15,11 +15,11 @@ class LoginFields extends Component {
 		}
 	}
 
-	componentDidMount() {
-		if(this.props.authenticated) {
-			this.props.history.push("/")
-		}
-	}
+	// componentDidMount() {
+	// 	if(this.props.authenticated) {
+	// 		this.props.history.push("/")
+	// 	}
+	// }
 
 	handleOnChange = e => {
 		const { name, value } = e.target;

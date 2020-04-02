@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { store } from './redux/store';
-import { getAuthUser } from './redux/auth/authActions'
+import PrivateRoute from "./components/routing/PrivateRoute";
+import { store } from "./redux/store";
+import { getAuthUser } from "./redux/auth/authActions";
 
 import Home from "./views/Home";
 import Edit from "./views/Edit";
@@ -14,13 +15,13 @@ import "./App.css";
 
 const App = () => {
 	useEffect(() => {
-		store.dispatch(getAuthUser())
+		store.dispatch(getAuthUser());
 		// eslint-disable-next-line
-	}, [])
+	}, []);
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/" component={Home} />
+				<PrivateRoute exact path="/" component={Home} />
 				<Route exact path="/edit/:id" component={Edit} />
 				<Route exact path="/create" component={Create} />
 				<Route exact path="/register" component={Register} />
