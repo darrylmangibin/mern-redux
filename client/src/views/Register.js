@@ -2,9 +2,9 @@ import React from "react";
 
 import Layout from "../components/layout/Layout";
 import { Navigation } from "../components/layout/";
-import RegisterFields from "../components/register/RegisterFields";
+import RegisterFields from '../components/register/RegisterFields';
 
-const Create = () => {
+const Register = () => {
 	return (
 		<Layout>
 			<Navigation />
@@ -13,4 +13,4 @@ const Create = () => {
 	);
 };
 
-export default Create;
+export default Register;

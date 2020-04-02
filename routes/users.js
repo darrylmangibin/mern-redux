@@ -31,7 +31,7 @@ router.post(
 
 		User.findOne({ email }).then(user => {
 			if (user) {
-				errors.username = "User already exist";
+				errors.email = "User already exist";
 				return res.status(400).json({ errors });
 			}
 		});
@@ -60,7 +60,6 @@ router.post(
 							})
 							.catch(err => {
 								console.log(err.message);
-								process.exit("Server Error");
 							});
 					}
 				);

@@ -1,9 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './App';
+import App from "./App";
+import Root from "./redux/Root";
 
 ReactDOM.render(
-  <App />,
-  document.querySelector("#root")
-)
+	<Root>
+		<App />
+	</Root>,
+	document.querySelector("#root")
+);
