@@ -1,19 +1,14 @@
 import React, { Fragment } from "react";
-import PropTypes from 'prop-types';
 
-import HeaderContainer from '../containers/HeaderContainer';
+import HeaderContianer from '../containers/HeaderContianer';
 
 const Layout = props => {
 	return (
 		<Fragment>
-			<HeaderContainer />
+			<HeaderContianer />
 			{props.children}
 		</Fragment>
 	);
 };
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-}
 
 export default Layout;

@@ -1,5 +1,6 @@
-import Button from './Button';
-import Input from './Input';
+import AuthButton from "./AuthButton";
+import Input from "./Input";
 import TextArea from "./TextArea";
+import Button from "./Button";
 
-export { Button, Input, TextArea }
+export { AuthButton, Input, TextArea, Button };

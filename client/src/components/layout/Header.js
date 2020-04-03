@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const Header = props => {
+	const { authenticated, loading, logout } = props;
 	const AuthLinks = () => {
 		return (
 			<Fragment>
@@ -12,21 +13,15 @@ const Header = props => {
 	};
 
 	const GuessLinks = () => {
-		return (
-			// eslint-dispable-next-line
-			<div onClick={() => props.logout()} style={{ cursor: "pointer" }}>
-				Logout
-			</div>
-		);
+		return <div onClick={() => logout()} style={{ cursor: "pointer" }}>Logout</div>;
 	};
 
 	const renderLinks = () => {
-		const { loading, authenticated } = props;
-		if (loading && !authenticated) {
+		if (!authenticated && loading) {
 			return null;
-		} else if (!loading && !authenticated) {
+		} else if (!authenticated && !loading) {
 			return <AuthLinks />;
-		} else if (!loading && authenticated) {
+		} else if (authenticated && !loading) {
 			return <GuessLinks />;
 		}
 	};
@@ -34,15 +29,15 @@ const Header = props => {
 	return (
 		<header className="header" style={{ display: "flex" }}>
 			<div className="container">
-				<h1 className="header__title">Mern App</h1>
-				<h2 className="header__subtitle">With Redux</h2>
+				<h1 className="header__title">Notes App</h1>
+				<h2 className="header__subtitle">Take notes and never forget</h2>
 			</div>
 			<div
 				style={{
+					width: 240,
 					display: "flex",
-					width: 210,
-					justifyContent: "space-between",
 					alignItems: "center",
+					justifyContent: "space-between",
 					padding: "0px 30px"
 				}}
 			>

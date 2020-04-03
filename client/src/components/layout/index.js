@@ -1,6 +1,7 @@
 import Header from "./Header";
+import Layout from "./Layout";
+import Nav from "./Nav";
 import Actions from "./Actions";
-import Navigation from "./Navigation";
-import Spinner from "./Spinner/Spinner";
+import Loading from "./Loading";
 
-export { Header, Actions, Navigation, Spinner };
+export { Layout, Header, Nav, Actions, Loading }
