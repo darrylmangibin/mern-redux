@@ -16,4 +16,7 @@ export const EDIT_NOTE = "EDIT_NOTE";
 export const EDIT_FAIL = "EDIT_FAIL";
 export const ADD_FAIL = "ADD_FAIL";
 
+export const FILTER_TEXT = "FILTER_TEXT";
+export const SORT_BY = "SORT_BY";
+
 export const CLEAR_ERRORS = "CLEAR_ERRORS";

@@ -4,6 +4,7 @@ import { createWhitelistFilter } from "redux-persist-transform-filter";
 import storage from "redux-persist/lib/storage";
 import authReducer from "../reducers/authReducer";
 import notesReducer from "../reducers/notesReducer";
+import filterReducer from './filterReducer';
 
 const persistConfig = {
 	key: "root",
@@ -11,12 +12,13 @@ const persistConfig = {
 	transforms: [
 		createWhitelistFilter("items", ["errors", "notes", "loading"],
 	)],
-	blacklist: ["auth"]
+	blacklist: ["auth", "filter"]
 };
 
 const rootReducer = combineReducers({
 	auth: authReducer,
-	items: notesReducer
+	items: notesReducer,
+	filter: filterReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);

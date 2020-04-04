@@ -6,7 +6,7 @@ import { Input, TextArea, Button } from "../common";
 class EditFields extends Component {
 	state = {
 		title: "",
-		body: ""
+		body: "",
 	};
 
 	componentDidMount() {
@@ -17,23 +17,23 @@ class EditFields extends Component {
 	UNSAFE_componentWillReceiveProps(nextProps) {
 		this.setState({
 			title: nextProps.note.title,
-			body: nextProps.note.body
+			body: nextProps.note.body,
 		});
 	}
 
-	handleOnChange = e => {
+	handleOnChange = (e) => {
 		const { name, value } = e.target;
 		this.setState({ [name]: value });
 	};
 
-	handleOnSubmit = e => {
+	handleOnSubmit = (e) => {
 		e.preventDefault();
 		const { title, body } = this.state;
 		const { match, history } = this.props;
 		const formData = {
 			title,
 			body,
-			updatedAt: Date.now()
+			updatedAt: Date.now(),
 		};
 		this.props.editNote(match.params.id, formData, history);
 	};
